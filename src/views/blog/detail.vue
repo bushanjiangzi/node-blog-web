@@ -24,7 +24,7 @@ export default {
         let itemArr = item.split('=')
         queryObj[itemArr[0]] = itemArr[1]
       })
-      console.log('queryObj:', queryObj)
+      // console.log('queryObj:', queryObj)
       Blog.detail({
         params: {
           id: queryObj.id

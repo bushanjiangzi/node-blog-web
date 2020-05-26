@@ -1,8 +1,8 @@
 <template>
   <div class="center">
     <div>登录页面</div>
-    <el-input v-model="username" placeholder="用户名"></el-input>
-    <el-input v-model="password" placeholder="密码"></el-input>
+    <el-input v-model="username" placeholder="用户名" @keyup="value = value.replace(/[^\a-\z\A-\Z0-9]/g, '')"></el-input>
+    <el-input v-model="password" placeholder="密码" type="password"></el-input>
     <el-button type="primary" round @click="login">登录</el-button>
   </div>
 </template>
