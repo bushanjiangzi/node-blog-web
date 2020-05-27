@@ -8,6 +8,7 @@ const Detail = () => import('@/views/blog/detail.vue') // 新建
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',

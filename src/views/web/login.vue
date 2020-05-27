@@ -29,7 +29,7 @@ export default {
           if (res.code === 200) {
             this.$message.success(res.message)
             sessionStorage.setItem('loginUser', JSON.stringify(res.data))
-            window.location.href = '/#/index'
+            window.location.href = '/index'
           } else {
             this.$message.error(res.message)
           }

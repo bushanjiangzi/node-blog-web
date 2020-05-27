@@ -57,16 +57,16 @@ export default {
     search() {
       this.getBlogList()
     },
-    toDetail(item) {
-      window.location.href = '/#/detail' + '?id=' + item.id
+    toDetail (item) {
+      window.location.href = '/detail' + '?id=' + item.id
     },
-    toNew(){
-      window.location.href = '/#/new'
+    toNew (){
+      window.location.href = '/new'
     },
-    toEdit(item){
-      window.location.href = '/#/new' + '?id=' + item.id
+    toEdit (item){
+      window.location.href = '/new' + '?id=' + item.id
     },
-    toDelete(item) {
+    toDelete (item) {
       Blog.delete({
         params: {
           id: item.id

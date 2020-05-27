@@ -75,7 +75,7 @@ export default {
           success: (res) => {
             if (res.code === 200) {
               this.$message.success('保存成功')
-              window.location.href = '/#/index'
+              window.location.href = '/index'
             } else {
               this.$message.error(res.message)
             }
@@ -99,8 +99,7 @@ export default {
             this.$message.error(err.message)
           }
         })
-      }
-      
+      }      
     }
   }
 }
