@@ -69,7 +69,7 @@ module.exports = {
       // 以方括号取对象属性时，[ 后面和 ] 前面是否需要空格, 可选参数 never, always
       'computed-property-spacing': [2,'never'],
       // 要求 return 语句要么总是指定返回的值，要么不指定
-      'consistent-return': 2,
+    //   'consistent-return': 2,
       // 用于指统一在回调函数中指向this的变量名，箭头函数中的this已经可以指向外层调用者，应该没卵用了
       // e.g [0,'that'] 指定只能 var that = this. that不能指向其他任何值，this也不能赋值给that以外的其他值
       'consistent-this': [2, '_this'],
@@ -459,7 +459,7 @@ module.exports = {
       // 强制将对象的属性放在不同的行上
       'object-property-newline': 0,
       // 要求或禁止对象字面量中方法和属性使用简写语法
-      'object-shorthand': 2,
+    //   'object-shorthand': 2,
       // 强制函数中的变量要么一起声明要么分开声明
       'one-var': 0,
       // 要求或禁止在 var 声明周围换行
@@ -475,7 +475,7 @@ module.exports = {
       // 要求使用箭头函数作为回调
       'prefer-arrow-callback': 0,
       // 要求使用 const 声明那些声明后不再被修改的变量
-      'prefer-const': 2,
+    //   'prefer-const': 2,
       // 采用两组配置对象。第一个对象参数决定了规则适用的解构类型
       'prefer-destructuring': 0,
       // 禁止调用parseInt()或Number.parseInt()使用两个参数调用：一个字符串; 和2（二进制），8（八进制）或16（十六进制）的基数选项。

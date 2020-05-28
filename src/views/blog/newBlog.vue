@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import {Blog} from '@/common/js/interface'
+import { Blog } from '@/common/js/interface'
 export default {
   name: 'new',
-  data() {
+  data () {
     return {
       title: '',
       content: '',
@@ -24,16 +24,16 @@ export default {
       isEdit: false
     }
   },
-  created() {},
-  mounted() {
-    let authorInfo = sessionStorage.getItem('loginUser')
+  created () {},
+  mounted () {
+    const authorInfo = sessionStorage.getItem('loginUser')
     this.author = JSON.parse(authorInfo).realname
     // console.log(this.author, authorInfo);
-    try{
-      let query = window.location.href.split('?')[1]
-      let queryObj = {}
-      query.split('&').forEach(item => {
-        let itemArr = item.split('=')
+    try {
+      const query = window.location.href.split('?')[1]
+      const queryObj = {}
+      query.split('&').forEach((item) => {
+        const itemArr = item.split('=')
         queryObj[itemArr[0]] = itemArr[1]
       })
       if (queryObj.id) {
@@ -41,10 +41,12 @@ export default {
         this.isEdit = true
       }
       this.getNlogDetail(queryObj.id)
-    } catch {}
+    } catch {
+      console.log('query出错了')
+    }
   },
   methods: {
-    getNlogDetail(id) {
+    getNlogDetail (id) {
       Blog.detail({
         params: {
           id: id
@@ -62,7 +64,7 @@ export default {
         }
       })
     },
-    save() {
+    save () {
       const params = {
         title: this.title,
         content: this.content,
@@ -90,7 +92,7 @@ export default {
           success: (res) => {
             if (res.code === 200) {
               this.$message.success('保存成功')
-              window.location.href = '/#/index'
+              window.location.href = '/index'
             } else {
               this.$message.error(res.message)
             }
@@ -99,7 +101,7 @@ export default {
             this.$message.error(err.message)
           }
         })
-      }      
+      }
     }
   }
 }

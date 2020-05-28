@@ -8,17 +8,17 @@
 </template>
 
 <script>
-import {User} from '@/common/js/interface'
+import { User } from '@/common/js/interface'
 export default {
   name: 'login',
-  data() {
+  data () {
     return {
       username: '',
       password: ''
     }
   },
   methods: {
-    login() {
+    login () {
       console.log(this.username, this.password)
       User.login({
         params: {

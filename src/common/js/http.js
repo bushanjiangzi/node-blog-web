@@ -33,6 +33,8 @@ axios.interceptors.response.use((response) => {
       break
     case 200:
       return response
+    default:
+    return
   }
 }, (error) => {
   if (error.response) {
@@ -46,6 +48,8 @@ axios.interceptors.response.use((response) => {
       case 500:
         alertIntervalTime(error.response.data.msg)
         return error
+      default:
+      return 404
     }
     // 返回接口返回的错误信息
   }
@@ -54,9 +58,9 @@ axios.interceptors.response.use((response) => {
 // get请求封装
 export const get = (url, data = {}, config) => {
   return new Promise((resolve, reject) => {
-    axios.get(url, {params: data} , config).then((response) => {
+    axios.get(url, { params: data }, config).then((response) => {
       resolve(response.data)
-    }).catch(err => {
+    }).catch ((err) => {
       reject(err)
     })
   })
@@ -68,7 +72,7 @@ export const post = (url, data = {}, config) => {
       if (response) {
         resolve(response.data)
       }
-    }).catch(err => {
+    }).catch((err) => {
       reject(err)
     })
   })
