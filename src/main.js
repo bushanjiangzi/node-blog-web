@@ -5,8 +5,14 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/common/css/common.css'
 
-Vue.config.productionTip = false
+Vue.component('HelloWorld', (resolve, reject) => {
+  // eslint-disable-next-line
+  require(['./components/HelloWorld.vue'], (res) => {
+    resolve(res)
+  })
+})
 
+Vue.config.productionTip = false
 Vue.use(ElementUI)
 
 new Vue({
