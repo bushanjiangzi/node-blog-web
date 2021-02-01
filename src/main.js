@@ -5,12 +5,20 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/common/css/common.css'
 
-Vue.component('HelloWorld', (resolve, reject) => {
-  // eslint-disable-next-line
-  require(['./components/HelloWorld.vue'], (res) => {
-    resolve(res)
-  })
+const LoadingComp = {
+  template: '<div>loading</div>'
+}
+const ErrorComp = {
+  template: '<div>error</div>'
+}
+const AsyncComp = () => ({
+  component: import('./components/HelloWorld.vue'),
+  loading: LoadingComp,
+  error: ErrorComp,
+  delay: 200,
+  timeout: 10000
 })
+Vue.component('HelloWorld', AsyncComp)
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)

@@ -4,6 +4,7 @@ import Login from '@/views/web/login.vue' // 登录页
 const Home = () => import('@/views/blog/index.vue') // 主页
 const NewBlog = () => import('@/views/blog/newBlog.vue') // 新建
 const Detail = () => import('@/views/blog/detail.vue') // 新建
+const Test = () => import('@/views/test.vue') // 新建
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/detail',
       name: '主页',
       component: Detail
+    },
+    {
+      path: '/test',
+      name: '主页',
+      component: Test
     }
   ]
 })
